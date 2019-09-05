@@ -28,7 +28,7 @@ final class UsernamePassword implements Authentication {
 
             yield $binaryPacketHandler->write($authServiceRequest);
             $status = yield $binaryPacketHandler->read();
-            if(!$status instanceof ServiceAccept) {
+            if (!$status instanceof ServiceAccept) {
                 throw new AuthenticationFailureException('Authentication not supported by server');
             }
 
@@ -40,7 +40,7 @@ final class UsernamePassword implements Authentication {
             yield $binaryPacketHandler->write($userAuthRequest);
             $packet = yield $binaryPacketHandler->read();
 
-            if($packet instanceof UserAuthBanner) {
+            if ($packet instanceof UserAuthBanner) {
                 $packet = yield $binaryPacketHandler->read();
             }
 

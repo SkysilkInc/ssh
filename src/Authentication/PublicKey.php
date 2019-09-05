@@ -59,7 +59,7 @@ final class PublicKey implements Authentication {
 
             yield $handler->write($authServiceRequest);
             $status = yield $handler->read();
-            if(!$status instanceof ServiceAccept) {
+            if (!$status instanceof ServiceAccept) {
                 throw new AuthenticationFailureException('Authentication not supported by server');
             }
 
@@ -92,7 +92,7 @@ final class PublicKey implements Authentication {
             yield $handler->write($request);
             $package = yield $handler->read();
 
-            if($package instanceof UserAuthBanner) {
+            if ($package instanceof UserAuthBanner) {
                 $package = yield $handler->read();
             }
 
@@ -121,7 +121,7 @@ final class PublicKey implements Authentication {
             yield $handler->write($signatureRequest);
             $packet = yield $handler->read();
 
-            if($packet instanceof UserAuthBanner) {
+            if ($packet instanceof UserAuthBanner) {
                 $packet = yield $handler->read();
             }
 
