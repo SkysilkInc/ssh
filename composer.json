@@ -1,5 +1,5 @@
 {
-    "name": "amphp/ssh",
+    "name": "skysilk/ssh",
     "homepage": "https://github.com/amphp/ssh",
     "description": "Async SSH client for PHP based on Amp.",
     "keywords": [
