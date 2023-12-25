@@ -231,7 +231,8 @@ final class Negotiator {
         $clientKex->kexAlgorithms = \array_keys($this->keyExchanges);
         $clientKex->serverHostKeyAlgorithms = [
             'ssh-rsa', // RECOMMENDED  sign   Raw RSA Key
-            'ssh-dss'  // REQUIRED     sign   Raw DSS Key
+            'ssh-dss',  // REQUIRED     sign   Raw DSS Key
+            'ssh-ed25519', // RECOMMENDED   sign   Raw ED25519 Key
         ];
         $clientKex->encryptionAlgorithmsClientToServer = \array_keys($this->encryptions);
         $clientKex->encryptionAlgorithmsServerToClient = \array_keys($this->decryptions);
